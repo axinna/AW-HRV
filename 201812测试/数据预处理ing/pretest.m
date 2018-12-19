@@ -4,7 +4,7 @@ var = raw;
 len = length(raw);
 
 for i=len:-1:1
-    if raw(i) >= 1.2
+    if raw(i) >= 1.2 || raw(i) <= 0.3
         var(i) = [];
     end
 end
