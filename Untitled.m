@@ -5,13 +5,13 @@ n=0:N-1;
 
 %频率
 
-f=0.01;
+f=0.1;
 
 %信号
 
 y1=sin(2*pi*f*n);
 
-y1(1:N/8)=y1(1:N/8)+1;
+%y1(1:N/8)=y1(1:N/8)+1;
 
 %绘制y1的fft谱幅度
 
@@ -68,7 +68,7 @@ for i=1:1:N/j
     y3(i) = (y1(j*i-3)+y1(j*i-2)+y1(j*i-1)+y1(j*i-0))/j;
     %y3(i) = (y1(j*i-1)+y1(j*i-0))/j;
 end
-figure;plot(y3)
+figure;stairs(y3)
 figure;
 fy3=abs(fft(y3));
 stem(fy3);
@@ -76,8 +76,8 @@ stem(fy3);
 figure;
 plot(abs(fft(y1)));
 hold on;
-plot(abs(fft(y2)),'r');
-plot(1:2:N,fy2s,'k*');
-stem(1:j:N,fy3,'b');
+%plot(abs(fft(y2)),'r');
+%plot(1:2:N,fy2s,'k*');
+plot(1:j:N,fy3,'r');
 hold off;
 
